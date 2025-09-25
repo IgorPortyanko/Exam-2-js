@@ -1,0 +1,14 @@
+@use 'variables' as v; 
+
+.icon{
+    width: 16px;
+    height: 16px;
+    fill: v.$white-color;
+}
+
+.circule:hover{
+    background-color: v.$white-color;
+     .icon{
+        fill: v.$violet;
+     }
+}

@@ -1,0 +1,16 @@
+@use 'variables' as v; 
+
+html, body{
+    font-family: v.$main-font-family;
+    font-size: v.$main-font-size;
+    color: v.$main-color;
+}
+
+.container{
+    max-width: 1170px;
+    margin: 0 auto;
+
+    @media (max-width: 1200px){
+        padding: 0 15px;
+    }
+}
