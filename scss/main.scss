@@ -6,6 +6,11 @@
         linear-gradient(45deg, #55B7FF, #7E5AFF);
     margin-bottom: 100px;
 
+    @media (max-width: 992px) {
+        margin-bottom: 50px;
+        padding: 25px 0;
+    }
+
     &__top {
         @include i.d-flex(row, space-between, center, 0);
         flex-wrap: wrap;
@@ -13,14 +18,6 @@
 
         @media (max-width: 768px) {
             margin-bottom: 70px;
-        }
-
-        .logo img {
-            @media (max-width: 568px) {
-                width: 180px;
-                height: 44px;
-                margin-bottom: 10px;
-            }
         }
 
         .socials {
@@ -37,7 +34,7 @@
         margin-bottom: 20px;
 
         @media (max-width: 1170px) {
-            @include i.adaptive-font(80, 36);
+            @include i.adaptive-font(80, 30);
         }
     }
 
@@ -72,6 +69,11 @@
     &__link {
         color: i.$white-color;
         @include i.font(i.$font-family-source-sans, 0.78rem, 400, 1, 0);
+
+        &:hover {
+            font-weight: 600;
+            text-shadow: 0 2px 6px rgba(240, 15, 15, 0.3);
+        }
     }
 }
 
@@ -81,26 +83,63 @@
     padding-top: 30px;
     margin-bottom: 150px;
 
-    &__block {
-        @include i.d-flex(row, space-between, flex-start, 66px);
-        margin-bottom: 177px;
+    @media (max-width: 992px) {
+        margin-bottom: 50px;
     }
 
+    &__block {
+        @include i.d-flex(row, space-between, flex-end, 66px);
+        margin-bottom: 177px;
+
+        @media (max-width: 992px) {
+            @include i.d-flex(column, space-between, center, 20px);
+            margin-bottom: 80px;
+        }
+
+        @media (max-width: 768px) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__image {
+        flex-basis: 57%;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+
     &__info {
-        padding: 94px 0 0 0;
+        flex-basis: 43%;
+        padding: 0 0 26px 0;
     }
 
     &-title {
         margin-bottom: 147px;
         text-align: center;
+
+        @media (max-width: 992px) {
+            margin-bottom: 60px;
+        }
     }
 
     &-btn {
         margin-bottom: 60px;
+
+        @media (max-width: 992px) {
+            margin-bottom: 30px;
+        }
     }
 
     .info-title {
         margin-bottom: 19px;
+
+        @media (max-width: 992px) {
+            text-align: center;
+        }
 
         &::before {
             display: none;
@@ -110,6 +149,15 @@
     .text {
         @include i.font(i.$font-family-open-sans, 1rem, 400, 1.67, 0);
         margin-bottom: 40px;
+
+        @media (max-width: 992px) {
+            text-align: center;
+        }
+    }
+
+    .location {
+        font-style: italic;
+        font-size: 15px;
     }
 
     .bg {
@@ -118,6 +166,10 @@
         position: absolute;
         z-index: -1;
         transition: all 0.8s ease;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
     }
 
     .bg-1 {
@@ -145,10 +197,20 @@
     background-position: center;
     margin-bottom: 150px;
 
+    @media (max-width: 992px) {
+        margin-bottom: 50px;
+        padding-top: 60px;
+        padding-bottom: 70px;
+    }
+
     &-title {
         text-align: center;
         color: i.$white-color;
         margin-bottom: 90px;
+
+        @media (max-width: 992px) {
+            margin-bottom: 50px;
+        }
 
         &::before {
             background: i.$white-color;
@@ -161,9 +223,17 @@
 .gallery {
     margin-bottom: 150px;
 
+    @media (max-width: 992px) {
+        margin-bottom: 50px;
+    }
+
     &-title {
         text-align: center;
         margin-bottom: 90px;
+
+        @media (max-width: 992px) {
+            margin-bottom: 50px;
+        }
     }
 
     &-wrapper {
@@ -171,6 +241,27 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 10px;
         margin-bottom: 60px;
+
+        @media (max-width: 992px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 576px) {
+            display: flex;
+            gap: 0;
+        }
+    }
+
+    .gallery-swiper {
+        margin-bottom: 40px;
+    }
+
+    &__item img {
+        width: 100%;
     }
 
     &-btn {
@@ -184,6 +275,18 @@
 #map {
     height: 700px;
     z-index: 0;
+
+    @media (max-width: 992px) {
+        height: 550px;
+    }
+
+    @media (max-width: 768px) {
+        height: 400px;
+    }
+
+    @media (max-width: 576px) {
+        height: 300px;
+    }
 }
 
 //------------------------------------------------
@@ -196,15 +299,24 @@
     background-size: cover;
     background-position: center;
 
+    @media (max-width: 768px) {
+        padding-top: 0;
+        padding-bottom: 50px;
+    }
 
     &-container {
         max-width: 770px;
         margin: 0 auto;
+
+        @media (max-width: 1190px) {
+            padding: 0 15px;
+        }
     }
 
     &__links {
-        @include i.d-flex(row, space-between, center, 0);
+        @include i.d-flex(row, space-between, center, 15px);
         margin-bottom: 41px;
+        flex-wrap: wrap;
     }
 
     .copyright {
@@ -224,6 +336,11 @@
 
         &__wrapper {
             @include i.d-flex(row, space-between, center, 50px);
+            flex-wrap: wrap;
+
+            @media (max-width: 576px) {
+                flex-direction: column;
+            }
         }
 
         &__title {
@@ -238,11 +355,23 @@
             &:last-child {
                 margin-bottom: 0;
             }
+
+            @media (max-width: 1170px) {
+                @include i.adaptive-font(18, 14);
+            }
         }
 
         i {
             margin-right: 4px;
             color: i.$violet
+        }
+
+        @media (max-width: 768px) {
+            width: auto;
+            position: static;
+            transform: none;
+            margin-bottom: 20px;
+            padding: 60px 20px 30px 20px;
         }
     }
 
@@ -255,6 +384,10 @@
             opacity: 0.2;
             margin-bottom: 32px;
             font-size: i.$main-font-size;
+
+            @media (max-width: 768px) {
+                width: 100%;
+            }
 
             &:focus {
                 opacity: 1;

@@ -31,9 +31,9 @@
                 <nav class="nav">
 
                     <input type="checkbox" class="nav__burger burger" id="nav-burger">
-                <label for="nav-burger" class="burger__img">
-                    <span></span>
-                </label>
+                    <label for="nav-burger" class="burger__img">
+                        <span></span>
+                    </label>
 
                     <ul class="menu">
                         <li class="menu__item">
@@ -125,11 +125,14 @@
                 </div>
             </div>
             <div class="header__bottom">
-                <div class="circule">
-                    <svg class="icon">
-                        <use xlink:href="./assets/img/icon/sprite-1.svg#arrow-down"></use>
-                    </svg>
-                </div>
+                <a href="#gallery" class="header-arrow__link">
+                    <div class="circule">
+                        <svg class="icon">
+                            <use xlink:href="./assets/img/icon/sprite-1.svg#arrow-down"></use>
+                        </svg>
+                    </div>
+                </a>
+
             </div>
         </div>
     </header>
@@ -256,15 +259,34 @@
                             </div>
                         </div>
 
+                        <div class="swiper-slide card">
+                            <div class="card__image">
+                                <img src="./assets/img/news/card-img-3.png" alt="image-3">
+                            </div>
+                            <div class="card__text">
+                                <h3 class="card__title">HYPNOTIZE YOURSELF INTO THE GHOST.</h3>
+                                <p class="card__desk">There are many things that are important to catalog design...</p>
+                                <div class="card__author">
+                                    <div class="card__author-photo">
+                                        <img src="./assets/img/news/user-photo-3.png" alt="photo">
+                                    </div>
+                                    <div class="card__author-info">
+                                        <p class="card__author-name">ALICE WARD</p>
+                                        <p class="card__author-date">30 Nov 2019</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="swiper-pagination swiper-pagination-cust"></div>
                 </div>
-                <div class="swiper-button-prev-cust circule">
+                <div class="swiper-button-prev-cust swiper-button-cust circule">
                     <svg class="icon">
                         <use xlink:href="./assets/img/icon/sprite-2.svg#arrow-left"></use>
                     </svg>
                 </div>
-                <div class="swiper-button-next-cust circule">
+                <div class="swiper-button-next-cust circule swiper-button-cust">
                     <svg class="icon">
                         <use xlink:href="./assets/img/icon/sprite-2.svg#arrow-right"></use>
                     </svg>
@@ -274,13 +296,27 @@
         <section id="gallery" class="section gallery">
             <div class="container">
                 <h2 class="title gallery-title">GALLERY</h2>
-                <div class="gallery-wrapper">
-                    <div class="gallery__item col-2 row-2"><img src="./assets/img/gallery/gal-img-1.png" alt="image 1">
+                <div class="swiper gallery-swiper">
+                    <div class="swiper-wrapper gallery-wrapper">
+
+                        <div class="swiper-slide gallery__item col-2 row-2"><img src="./assets/img/gallery/gal-img-1.png"
+                                alt="image 1">
+                        </div>
+
+                        <div class="swiper-slide gallery__item"><img src="./assets/img/gallery/gal-img-2.png" alt="image 2">
+                        </div>
+
+                        <div class="swiper-slide gallery__item"><img src="./assets/img/gallery/gal-img-3.png" alt="image 3">
+                        </div>
+
+                        <div class="swiper-slide gallery__item"><img src="./assets/img/gallery/gal-img-4.png" alt="image 4">
+                        </div>
+
+                        <div class="swiper-slide gallery__item"><img src="./assets/img/gallery/gal-img-5.png" alt="image 5">
+                        </div>
+
                     </div>
-                    <div class="gallery__item"><img src="./assets/img/gallery/gal-img-2.png" alt="image 2"></div>
-                    <div class="gallery__item"><img src="./assets/img/gallery/gal-img-3.png" alt="image 3"></div>
-                    <div class="gallery__item"><img src="./assets/img/gallery/gal-img-4.png" alt="image 4"></div>
-                    <div class="gallery__item"><img src="./assets/img/gallery/gal-img-5.png" alt="image 5"></div>
+                    <div class="swiper-pagination-gal"></div>
                 </div>
                 <button class="btn gallery-btn">SEE MORE</button>
             </div>

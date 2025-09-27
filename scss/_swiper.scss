@@ -27,16 +27,20 @@
     justify-content: center;
 }
 
-.swiper-button-prev-cust {
+.swiper-button-cust{
     position: absolute;
-    left: -100px;
     top: 50%;
+    @media (max-width: 1400px) {
+        display: none !important;
+    }
+}
+
+.swiper-button-prev-cust {
+    left: -100px;
 }
 
 .swiper-button-next-cust {
-    position: absolute;
     right: -100px;
-    top: 50%;
 }
 
 .header-swiper{
@@ -61,3 +65,8 @@
     display: block;
     margin-bottom: 40px !important;
 } 
+
+.swiper-pagination-gal{
+    background-color: darkgrey;
+    text-align: center;
+}

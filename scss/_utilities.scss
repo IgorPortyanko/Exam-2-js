@@ -1,21 +1,29 @@
-@use 'variables' as v; 
+@use 'variables' as v;
 @use 'mixins' as m;
 @use 'placeholder' as p;
 
 .title {
     @include m.font(v.$main-font-family, 2.44rem, 700, 1, 0);
 
-    &::before{
+    &::before {
         @extend %line;
         background: v.$main-color;
+    }
+
+    @media (max-width: 1170px) {
+        @include m.adaptive-font(44, 30);
     }
 }
 
 .subtitle {
     @include m.font(v.$main-font-family, 1.22rem, 400, 1, 0);
+
+    @media (max-width: 992px) {
+        text-align: center;
+    }
 }
 
-.relative{
+.relative {
     position: relative;
 }
 
@@ -56,25 +64,36 @@
 }
 
 .reverse {
-    flex-direction: row-reverse !important; 
+    flex-direction: row-reverse !important;
+
+    @media (max-width: 992px) {
+        flex-direction: column !important;
+    }
 }
 
-.col-1{
+.col-1 {
     grid-column: span 1;
 }
 
-.col-2{
+.col-2 {
     grid-column: span 2;
+
+    @media (max-width: 576px) {
+        grid-column: span 1;
+    }
 }
 
-.row-1{
-    grid-row: span 1;
-}
-
-.row-2{
+.row-2 {
     grid-row: span 2;
 }
 
-.none{
+.none {
     display: none;
+}
+
+.logo img {
+    @media (max-width: 568px) {
+        width: 180px;
+        height: 44px;
+    }
 }

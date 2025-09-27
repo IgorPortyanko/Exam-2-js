@@ -2,13 +2,13 @@
 const aboutBlockObserver = new IntersectionObserver(
     (entries, observer) => {
         entries.forEach(entry => {
-            if(entry.isIntersecting) {
+            if (entry.isIntersecting) {
                 entry.target.style.cssText = entry.target.dataset.style
-            } else{
+            } else {
                 entry.target.style.cssText = ''
             }
         })
-        
+
     },
     {})
 
