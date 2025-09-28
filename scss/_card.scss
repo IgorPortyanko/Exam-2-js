@@ -29,10 +29,20 @@
     &__desk {
         @include m.font(v.$font-family-open-sans, 1rem, 400, 1.39, 0);
         margin-bottom: 39px;
+
+        @media (max-width: 1170px) {
+            @include m.adaptive-font(18, 14);
+        }
     }
 
     &__author {
         @include m.d-flex(row, flex-start, center, 20px);
+
+        &-name {
+            @media (max-width: 1170px) {
+                @include m.adaptive-font(18, 14);
+            }
+        }
 
         &-photo img {
             border-radius: 50%;

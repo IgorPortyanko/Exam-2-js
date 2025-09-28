@@ -1,0 +1,22 @@
+@use 'mixins' as m;
+@use 'variables' as v;
+
+.modal-menu {
+    width: 180px;
+    background-color: rgba(121, 87, 184, 0.993);
+    padding: 20px;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    z-index: 4;
+    border-radius: 10px 0 0 10px;
+
+    &__item {
+        border-bottom: solid 1px rgb(70, 39, 70)
+    }
+
+    &__link {
+        @include m.font(v.$main-font-family, 1rem, 600, 2.2, 0);
+        color: #fff;
+    }
+}

@@ -35,7 +35,7 @@
                         <span></span>
                     </label>
 
-                    <ul class="menu">
+                    <ul id="menu" class="menu">
                         <li class="menu__item">
                             <a href="#about" class="menu__link">
                                 <span class="dot active"></span>
@@ -94,6 +94,28 @@
                         </li>
                     </ul>
                 </div>
+                <ul class="modal-menu none">
+                    <li class="modal-menu__item">
+                        <a href="#about" class="modal-menu__link">
+                            ABOUT US
+                        </a>
+                    </li>
+                    <li class="modal-menu__item">
+                        <a href="#gallery" class="modal-menu__link">
+                            PROJECTS
+                        </a>
+                    </li>
+                    <li class="modal-menu__item">
+                        <a href="#news" class="modal-menu__link">
+                            NEWS
+                        </a>
+                    </li>
+                    <li class="modal-menu__item">
+                        <a href="#contacts" class="modal-menu__link">
+                            CONTACT
+                        </a>
+                    </li>
+                </ul>
             </div>
             <div class="header__main">
                 <div class="header-swiper swiper">
@@ -149,9 +171,14 @@
                     <div class="about__info">
                         <h4 class="subtitle">ONE WORLD</h4>
                         <h2 class="title info-title">TRADE CENTER</h2>
-                        <p class="text">Increasing prosperity in our lives can be accomplished by having the right frame
+                        <div class="text-block">
+                            <p class="text">Increasing prosperity in our lives can be accomplished by having the right frame
                             of
                             mind. The truth is, our thoughts are very powerful.</p>
+                        <p class="text more-text none">Increasing prosperity in our lives can be accomplished by having the right frame
+                            of
+                            mind. The truth is, our thoughts are very powerful.</p>
+                        </div>
                         <button class="btn about-btn">MORE DETAILS</button>
                         <p class="location">New York City, United States - 1776 feet</p>
                     </div>
@@ -164,9 +191,14 @@
                     <div class="about__info">
                         <h4 class="subtitle">INTERNATIONAL</h4>
                         <h2 class="title info-title">COMMERCE CENTRE</h2>
-                        <p class="text">Successful businesses have many things in common, today we’ll look at the big
+                        <div class="text-block">
+                            <p class="text">Successful businesses have many things in common, today we’ll look at the big
                             ‘R’ of
                             recognition and how a digital advertising network may help.</p>
+                            <p class="text more-text none">Successful businesses have many things in common, today we’ll look at the big
+                            ‘R’ of
+                            recognition and how a digital advertising network may help.</p>
+                        </div>
                         <button class="btn about-btn">MORE DETAILS</button>
                         <p class="location">Hong Kong - 1588 feet</p>
                     </div>
@@ -298,25 +330,27 @@
                 <h2 class="title gallery-title">GALLERY</h2>
                 <div class="swiper gallery-swiper">
                     <div class="swiper-wrapper gallery-wrapper">
-
-                        <div class="swiper-slide gallery__item col-2 row-2"><img src="./assets/img/gallery/gal-img-1.png"
-                                alt="image 1">
+                        <div class="swiper-slide gallery__item col-2 row-2"><img
+                                src="./assets/img/gallery/gal-img-1.png" alt="image 1">
                         </div>
 
-                        <div class="swiper-slide gallery__item"><img src="./assets/img/gallery/gal-img-2.png" alt="image 2">
+                        <div class="swiper-slide gallery__item"><img src="./assets/img/gallery/gal-img-2.png"
+                                alt="image 2">
                         </div>
 
-                        <div class="swiper-slide gallery__item"><img src="./assets/img/gallery/gal-img-3.png" alt="image 3">
+                        <div class="swiper-slide gallery__item"><img src="./assets/img/gallery/gal-img-3.png"
+                                alt="image 3">
                         </div>
 
-                        <div class="swiper-slide gallery__item"><img src="./assets/img/gallery/gal-img-4.png" alt="image 4">
+                        <div class="swiper-slide gallery__item"><img src="./assets/img/gallery/gal-img-4.png"
+                                alt="image 4">
                         </div>
 
-                        <div class="swiper-slide gallery__item"><img src="./assets/img/gallery/gal-img-5.png" alt="image 5">
+                        <div class="swiper-slide gallery__item"><img src="./assets/img/gallery/gal-img-5.png"
+                                alt="image 5">
                         </div>
-
                     </div>
-                    <div class="swiper-pagination-gal"></div>
+                    <div class="swiper-pagination"></div>
                 </div>
                 <button class="btn gallery-btn">SEE MORE</button>
             </div>
@@ -399,6 +433,7 @@
     <script src="./js/swipe.js"></script>
     <script src="./js/map.js"></script>
     <script src="./js/observer.js"></script>
+    <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>

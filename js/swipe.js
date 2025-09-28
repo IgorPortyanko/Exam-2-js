@@ -4,7 +4,7 @@ const swiper = new Swiper('.news-swiper', {
     slidesPerView: 1,
 
     autoplay: {
-        delay: 3000,
+        delay: 4000,
     },
 
     pagination: {
@@ -40,7 +40,7 @@ const headerSwiper = new Swiper('.header-swiper', {
     },
 
     autoplay: {
-        delay: 3000,
+        delay: 4000,
     },
 
     breakpoints: {
@@ -64,10 +64,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const enableSwiper = function(className, settings) {
       swiper = new Swiper(className, settings);
-
-      if (callback) {
-        callback(swiper);
-      }
     }
 
     const checker = function() {
@@ -91,7 +87,7 @@ window.addEventListener('DOMContentLoaded', () => {
       slidesPerView: 1,
       freeMode: true,
       pagination: {
-        el: '.swiper-pagination-gal',
+        el: '.swiper-pagination',
         clickable: true,
     }
     }

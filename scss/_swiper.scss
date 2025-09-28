@@ -5,10 +5,15 @@
     border: 1px solid #fff !important;
     border-radius: 50% !important;
     opacity: 1 !important;
-    margin-left: 16px !important;
-    margin-right: 16px !important;
+    margin-left: 14px !important;
+    margin-right: 14px !important;
     transition: all 0.3s ease !important;
     cursor: pointer;
+
+    @media (max-width: 400px) {
+        margin-left: 8px !important;
+        margin-right: 8px !important;
+    }
 }
 
 .swiper-pagination-bullet-active {
