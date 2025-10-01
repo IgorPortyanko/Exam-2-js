@@ -61,6 +61,11 @@
     border: solid 1px v.$main-color;
     @include m.font(v.$main-font-family, 0.78rem, 400, 1, 0);
     background-color: inherit;
+    &:hover{
+        background-color: #cfcdcd;
+        box-shadow: 2px 2px 2px #0000006b;
+        border: none;
+    }
 }
 
 .reverse {

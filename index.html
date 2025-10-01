@@ -382,11 +382,12 @@
                         From 07:05AM to 19:30PM
                     </li>
                 </ul>
-                <form class="form">
-                    <input type="text" class="form-input" placeholder="Name" name="name">
-                    <input type="text" class="form-input" placeholder="Email" name="email">
+                <form id="contactForm" class="form">
+                    <input type="text" class="form-input" placeholder="Name" name="name" required>
+                    <input type="text" class="form-input" placeholder="Email" name="email" required>
                     <button type="submit" class="btn form-btn">SUBMIT</button>
                 </form>
+                <p id="formMessage" style="color:red;"></p>
             </div>
         </div>
         <div class="footer-container">

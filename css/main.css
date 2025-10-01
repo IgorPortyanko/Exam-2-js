@@ -345,6 +345,11 @@ html {
   letter-spacing: 0;
   background-color: inherit;
 }
+.btn:hover {
+  background-color: #cfcdcd;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4196078431);
+  border: none;
+}
 
 .reverse {
   flex-direction: row-reverse !important;
@@ -690,7 +695,7 @@ html {
   position: relative;
   padding-top: 150px;
   padding-bottom: 170px;
-  background: url("/assets/img/news-bg.webp");
+  background: url("../assets/img/news-bg.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -768,6 +773,11 @@ html {
   display: block;
   margin: 0 auto;
 }
+@media (max-width: 576px) {
+  .gallery-btn {
+    display: none;
+  }
+}
 
 #map {
   height: 700px;
@@ -792,7 +802,7 @@ html {
 .footer {
   padding-top: 203px;
   padding-bottom: 234px;
-  background: url("/assets/img/footer-bg.webp");
+  background: url("../assets/img/footer-bg.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -911,3 +921,9 @@ html {
   float: right;
   width: 140px;
 }
+.footer .form .error {
+  border: 1px solid red;
+}
+.footer .form .success {
+  border: 1px solid green;
+}/*# sourceMappingURL=main.css.map */

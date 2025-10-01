@@ -1,55 +1,81 @@
 'use strict'
+import { initGallery } from './gallery.js'
+import { isValidName, isValidEmail } from './validation.js';
+
+initGallery()
 
 const menu = document.getElementById('menu')
-const burger = document.querySelector('.burger__img')
+//const burger = document.querySelector('.burger__img')
 const burgerCheck = document.getElementById('nav-burger')
 const modalMenu = document.querySelector('.modal-menu ')
 const aboutBtn = document.querySelectorAll('.about-btn')
-const gallery = document.querySelector('.gallery-wrapper')
-const galleryBtn = document.querySelector('.gallery-btn')
+const form = document.getElementById('contactForm');
+const message = document.getElementById('formMessage');
 
-const galleryImages = ['dop1', 'dop2', 'dop3', 'dop4']
+function addClass (element, newClass) {
+    element.classList.add(newClass)
+}
+
+function removeClassForElements (selector, className) {
+    document.querySelectorAll(selector).forEach(element => {
+        element.classList.remove(className);
+    });
+}
+
+function toggleModal() {
+    modalMenu.classList.toggle('none', !burgerCheck.checked);
+}
+
+function showMoreText(event) {
+    const clickedBtn = event.target
+    const parentDiv = clickedBtn.closest('div')
+    const paragraph = parentDiv.querySelector('.more-text')
+
+    paragraph.classList.toggle('none')
+    let visible = paragraph.classList.contains('none')
+    toggleButtonName(visible, clickedBtn, 'MORE DETAILS', 'CLOSE')
+}
+
+function toggleButtonName (condition, button, name1, name2) {
+    condition ? button.textContent = name1 : button.textContent = name2
+}
 
 menu.addEventListener('click', (event) => {
     const clickedLink = event.target.closest('a.menu__link');
     if (!clickedLink) return;
-
-    document.querySelectorAll('#menu .dot').forEach(dot => {
-        dot.classList.remove('active');
-    });
-
     const dot = clickedLink.querySelector('.dot');
-    if(dot) dot.classList.add('active');
+
+    removeClassForElements ('#menu .dot', 'active')
+    addClass(dot, 'active')
 })
 
-burgerCheck.addEventListener('change', () => {
-  modalMenu.classList.toggle('none', !burgerCheck.checked);
-});
+burgerCheck.addEventListener('change', toggleModal);
 
 aboutBtn.forEach(btn => {
     btn.addEventListener('click', (event) => {
-        const clickedBtn = event.target
-        const parentDiv = clickedBtn.closest('div')
-        const paragraph = parentDiv.querySelector('.more-text')
-        
-        paragraph.classList.toggle('none')
-        paragraph.classList.contains('none') 
-            ? clickedBtn.textContent = 'MORE DETAILS'
-            : clickedBtn.textContent = 'CLOSE'
+        showMoreText(event)
     })
 })
 
-galleryBtn.addEventListener('click', () => {
-    galleryImages.forEach(image => {
-        addImage(image, gallery)
-    })
-})
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
 
-function addImage (img, block) {
-    const element = `
-        <div class="swiper-slide gallery__item">
-            <img src="./assets/img/gallery/${img}.jpg" alt="${img}">
-        </div>
-    `
-    block.insertAdjacentHTML('beforeend', element)
-}
+    const nameInput = form.name;
+    const emailInput = form.email;
+
+    [nameInput, emailInput].forEach(input => {
+        input.classList.remove("error", "success");
+    });
+
+    let valid = isValidName(nameInput) && isValidEmail(emailInput);
+    
+
+    if (!valid) {
+        message.style.color = "red";
+        message.textContent = "Будь ласка, перевірте правильність введених даних.";
+        return;
+    }
+
+    message.style.color = "green";
+    message.textContent = "Форма валідна";
+});
