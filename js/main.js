@@ -5,7 +5,6 @@ import { isValidName, isValidEmail } from './validation.js';
 initGallery()
 
 const menu = document.getElementById('menu')
-//const burger = document.querySelector('.burger__img')
 const burgerCheck = document.getElementById('nav-burger')
 const modalMenu = document.querySelector('.modal-menu ')
 const aboutBtn = document.querySelectorAll('.about-btn')
@@ -72,10 +71,10 @@ form.addEventListener('submit', function (event) {
 
     if (!valid) {
         message.style.color = "red";
-        message.textContent = "Будь ласка, перевірте правильність введених даних.";
+        message.textContent = "Please check the entered data";
         return;
     }
 
     message.style.color = "green";
-    message.textContent = "Форма валідна";
+    message.textContent = "Form submitted successfully!";
 });
